@@ -1,0 +1,2585 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Bolos Deliciosos | Tienda Online</title>
+
+
+<style>
+
+/* ==================================================
+   ESTILOS GENERALES
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f8f0df;
+    color:#4b3828;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header{
+    background:#e8d2b5;
+    color:#4b3828;
+
+    padding:16px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-size:27px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+nav button{
+    border:none;
+    padding:10px 16px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-usuario{
+    background:#f7d9d7;
+    color:#4b3828;
+}
+
+.btn-carrito{
+    background:#fff7ed;
+    color:#4b3828;
+}
+
+
+/* ==================================================
+   PORTADA
+================================================== */
+
+.hero{
+
+    min-height:470px;
+
+    background:
+
+    linear-gradient(
+        rgba(112,82,59,.30),
+        rgba(112,82,59,.30)
+    ),
+
+    url("bolis.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+}
+
+.hero-contenido{
+
+    background:rgba(76,52,38,.50);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    backdrop-filter:blur(3px);
+}
+
+.hero h1{
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:21px;
+    margin-bottom:25px;
+}
+
+.hero a{
+
+    display:inline-block;
+
+    background:#f8dfd6;
+    color:#4b3828;
+
+    text-decoration:none;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+}
+
+
+/* ==================================================
+   CONTENEDOR
+================================================== */
+
+.contenedor{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:55px auto;
+
+}
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.titulo h2{
+
+    font-size:36px;
+
+    color:#70523b;
+
+    margin-bottom:10px;
+
+}
+
+.titulo p{
+
+    color:#806b58;
+
+}
+
+
+/* ==================================================
+   PRODUCTOS
+================================================== */
+
+.productos{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+    gap:28px;
+
+}
+
+.producto{
+
+    background:#fffaf3;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 18px
+    rgba(95,65,42,.12);
+
+    transition:.3s;
+
+    border:1px solid #ead9c4;
+
+}
+
+.producto:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.producto img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+.producto-info{
+
+    padding:20px;
+
+}
+
+.producto-info h3{
+
+    color:#6a4c36;
+
+    font-size:21px;
+
+    margin-bottom:8px;
+
+}
+
+.descripcion{
+
+    color:#8b7662;
+
+    margin-bottom:12px;
+
+}
+
+.precio{
+
+    color:#b66f61;
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.agregar{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#d9a89e;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+}
+
+.agregar:hover{
+
+    background:#c78e83;
+
+}
+
+
+/* ==================================================
+   MEDIOS DE PAGO
+================================================== */
+
+.medios-pago{
+
+    background:#f3dfc5;
+
+    padding:55px 20px;
+
+    text-align:center;
+
+    margin-top:50px;
+
+}
+
+.medios-pago h2{
+
+    color:#6a4c36;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.medios-pago > p{
+
+    color:#806b58;
+
+    margin-bottom:30px;
+
+}
+
+.pagos-grid{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(160px,1fr));
+
+    gap:18px;
+
+}
+
+.pago{
+
+    background:#fffaf3;
+
+    padding:22px 15px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 3px 12px
+    rgba(80,50,30,.08);
+
+    transition:.2s;
+
+}
+
+.pago:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.pago .icono{
+
+    font-size:35px;
+
+    margin-bottom:10px;
+
+}
+
+.pago h3{
+
+    color:#654936;
+
+    margin-bottom:5px;
+
+}
+
+.pago p{
+
+    color:#897462;
+
+    font-size:14px;
+
+}
+
+
+/* ==================================================
+   MODALES
+================================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(63,45,33,.60);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:3000;
+
+    padding:20px;
+
+}
+
+.modal.activo{
+
+    display:flex;
+
+}
+
+.modal-contenido{
+
+    background:#fffaf3;
+
+    width:100%;
+
+    max-width:510px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    position:relative;
+
+    box-shadow:
+    0 10px 40px
+    rgba(0,0,0,.2);
+
+}
+
+.cerrar{
+
+    position:absolute;
+
+    right:15px;
+    top:15px;
+
+    width:35px;
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ead9c4;
+
+    color:#5d4533;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+/* ==================================================
+   FORMULARIOS
+================================================== */
+
+.formulario{
+
+    margin-top:20px;
+
+}
+
+.formulario label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+    color:#614a38;
+
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #dcc7af;
+
+    border-radius:9px;
+
+    background:white;
+
+    color:#4b3828;
+
+}
+
+.formulario textarea{
+
+    resize:vertical;
+
+}
+
+.formulario button{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#c99482;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+
+/* ==================================================
+   CARRITO
+================================================== */
+
+.item-carrito{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #ead9c4;
+
+}
+
+.item-carrito img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.item-info{
+
+    flex:1;
+
+}
+
+.item-info strong{
+
+    color:#604734;
+
+}
+
+.controles{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:7px;
+
+}
+
+.controles button{
+
+    width:28px;
+    height:28px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:#ead2b7;
+
+    color:#5a4230;
+
+    cursor:pointer;
+
+}
+
+.controles .eliminar{
+
+    background:#d58d86;
+
+    color:white;
+
+}
+
+.total{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#6a4c36;
+
+    margin:25px 0;
+
+}
+
+
+/* ==================================================
+   OPCIONES DE PAGO
+================================================== */
+
+.metodo{
+
+    display:block;
+
+    border:1px solid #dfcbb5;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    margin-top:10px;
+
+    cursor:pointer;
+
+    background:#fffdf9;
+
+}
+
+.metodo:hover{
+
+    background:#f9eee1;
+
+}
+
+.metodo input{
+
+    margin-right:8px;
+
+}
+
+.info-pago{
+
+    display:none;
+
+    background:#f4e4d0;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-top:12px;
+
+    color:#6a4c36;
+
+}
+
+.info-pago.activo{
+
+    display:block;
+
+}
+
+
+/* ==================================================
+   INFORMACION
+================================================== */
+
+.info{
+
+    background:#d9bfa0;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#4d3929;
+
+}
+
+.info h2{
+
+    margin-bottom:15px;
+
+}
+
+.info p{
+
+    margin:9px;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer{
+
+    background:#6b4d38;
+
+    color:#fff5e9;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:600px){
+
+    header{
+
+        padding:13px;
+
+    }
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+    nav button{
+
+        padding:8px;
+
+        font-size:11px;
+
+    }
+
+    .hero h1{
+
+        font-size:40px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .hero-contenido{
+
+        margin:15px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header>
+
+    <div class="logo">
+
+         BOLITTOS
+        DELICIOSOS
+
+    </div>
+
+
+    <nav>
+
+        <button
+        class="btn-usuario"
+        onclick="abrirUsuario()"
+        id="botonUsuario">
+
+            👤 Ingresar
+
+        </button>
+
+
+        <button
+        class="btn-carrito"
+        onclick="abrirCarrito()">
+
+            🛒 Carrito
+            (<span id="cantidad">0</span>)
+
+        </button>
+
+    </nav>
+
+</header>
+
+
+<!-- ==================================================
+     PORTADA
+================================================== -->
+
+<section class="hero">
+
+    <div class="hero-contenido">
+
+        <h1>
+            BOLITTOS
+        </h1>
+
+        <p>
+            Sabor, frescura y mucho cariño
+            en cada bolito.
+        </p>
+
+        <a href="#productos">
+
+            Ver nuestros bolos
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     PRODUCTOS
+================================================== -->
+
+<main
+class="contenedor"
+id="productos">
+
+    <div class="titulo">
+
+        <h2>
+            Nuestros deliciosos bolos
+        </h2>
+
+        <p>
+            Escoge tu sabor favorito
+        </p>
+
+    </div>
+
+
+    <div class="productos">
+
+
+        <!-- BOLO 1 -->
+
+        <div class="producto">
+
+            <img
+            src="Captura de pantalla 2026-09-22 155609.png"
+            alt="Bolo de Milo">
+
+            <div class="producto-info">
+
+                <h3>
+                     Bolo de Milo
+                </h3>
+
+                <p class="descripcion">
+                    Delicioso sabor a Milo.
+                </p>
+
+                <p class="precio">
+                    $2.500
+                </p>
+
+                <button
+                class="agregar"
+                onclick="agregarProducto(
+                'Bolo de Fresa',
+                3000,
+                'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=700&q=80'
+                )">
+
+                    🛒 Agregar
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOLO 2 -->
+
+        <div class="producto">
+
+            <img
+            src="bolo leche.jpg"
+            alt="Bolo de Leche">
+
+            <div class="producto-info">
+
+                <h3>
+                     Bolo de Leche
+                </h3>
+
+                <p class="descripcion">
+                    Cremoso y delicioso.
+                </p>
+
+                <p class="precio">
+                    $2.000
+                </p>
+
+                <button
+                class="agregar"
+                onclick="agregarProducto(
+                'Bolo de Chocolate',
+                3500,
+                'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80'
+                )">
+
+                    🛒 Agregar
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOLO 3 -->
+
+        <div class="producto">
+
+            <img
+            src="images NUTELLA BOLO.jfif"
+            alt="Bolo de Nutella">
+
+            <div class="producto-info">
+
+                <h3>
+                    Bolo de Nutella
+                </h3>
+
+                <p class="descripcion">
+                    "EL MEJOR".
+                </p>
+
+                <p class="precio">
+                    $3.000
+                </p>
+
+                <button
+                class="agregar"
+                onclick="agregarProducto(
+                'Bolo de Vainilla',
+                3000,
+                'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80'
+                )">
+
+                    🛒 Agregar
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOLO 4 -->
+
+        <div class="producto">
+
+            <img
+            src="BOLO DE LIMON.jpg"
+            alt="Bolo especial">
+
+            <div class="producto-info">
+
+                <h3>
+                    Bolo de Limon
+                </h3>
+
+                <p class="descripcion">
+                    ¡Alista el paladar!.
+                </p>
+
+                <p class="precio">
+                    $1.000
+                </p>
+
+                <button
+                class="agregar"
+                onclick="agregarProducto(
+                'Bolo Especial',
+                4000,
+                'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=700&q=80'
+                )">
+
+                    🛒 Agregar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ==================================================
+     MEDIOS DE PAGO
+================================================== -->
+
+<section class="medios-pago">
+
+    <h2>
+        💳 Medios de pago
+    </h2>
+
+    <p>
+        Puedes pagar tu pedido utilizando
+        cualquiera de estas opciones.
+    </p>
+
+
+    <div class="pagos-grid">
+
+
+        <div class="pago">
+
+            <div class="icono">
+                📱
+            </div>
+
+            <h3>
+                Nequi
+            </h3>
+
+            <p>
+                Pago fácil y rápido
+            </p>
+
+        </div>
+
+
+        <div class="pago">
+
+            <div class="icono">
+                📱
+            </div>
+
+            <h3>
+                Daviplata
+            </h3>
+
+            <p>
+                Pago desde tu celular
+            </p>
+
+        </div>
+
+
+        <div class="pago">
+
+            <div class="icono">
+                🏦
+            </div>
+
+            <h3>
+                PSE
+            </h3>
+
+            <p>
+                Pago desde tu banco
+            </p>
+
+        </div>
+
+
+        <div class="pago">
+
+            <div class="icono">
+                💳
+            </div>
+
+            <h3>
+                Tarjeta
+            </h3>
+
+            <p>
+                Débito o crédito
+            </p>
+
+        </div>
+
+
+        <div class="pago">
+
+            <div class="icono">
+                💵
+            </div>
+
+            <h3>
+                Contraentrega
+            </h3>
+
+            <p>
+                Paga al recibir
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     MODAL USUARIO
+================================================== -->
+
+<div
+class="modal"
+id="modalUsuario">
+
+<div class="modal-contenido">
+
+<button
+class="cerrar"
+onclick="cerrarModal('modalUsuario')">
+
+    ✕
+
+</button>
+
+
+<div id="loginSeccion">
+
+<h2>
+    👤 Iniciar sesión
+</h2>
+
+
+<form
+class="formulario"
+onsubmit="iniciarSesion(event)">
+
+
+<label>
+    Correo electrónico
+</label>
+
+<input
+type="email"
+id="loginCorreo"
+required>
+
+
+<label>
+    Contraseña
+</label>
+
+<input
+type="password"
+id="loginPassword"
+required>
+
+
+<button>
+    Iniciar sesión
+</button>
+
+</form>
+
+
+<p style="text-align:center;margin-top:20px;">
+
+    ¿No tienes cuenta?
+
+    <button
+    onclick="mostrarRegistro()"
+    style="border:none;background:none;text-decoration:underline;cursor:pointer;color:#a36f5d;">
+
+        Crear cuenta
+
+    </button>
+
+</p>
+
+</div>
+
+
+<!-- REGISTRO -->
+
+<div
+id="registroSeccion"
+style="display:none;">
+
+<h2>
+    📝 Crear cuenta
+</h2>
+
+
+<form
+class="formulario"
+onsubmit="registrar(event)">
+
+
+<label>
+    Nombre completo
+</label>
+
+<input
+type="text"
+id="registroNombre"
+required>
+
+
+<label>
+    Correo electrónico
+</label>
+
+<input
+type="email"
+id="registroCorreo"
+required>
+
+
+<label>
+    Contraseña
+</label>
+
+<input
+type="password"
+id="registroPassword"
+minlength="6"
+required>
+
+
+<button>
+    Registrarme
+</button>
+
+</form>
+
+
+<p style="text-align:center;margin-top:20px;">
+
+    ¿Ya tienes cuenta?
+
+    <button
+    onclick="mostrarLogin()"
+    style="border:none;background:none;text-decoration:underline;cursor:pointer;color:#a36f5d;">
+
+        Iniciar sesión
+
+    </button>
+
+</p>
+
+</div>
+
+
+<!-- USUARIO -->
+
+<div
+id="usuarioSeccion"
+style="display:none;text-align:center;">
+
+<h2>
+    👋 ¡Hola!
+</h2>
+
+<p
+id="nombreUsuario"
+style="margin-top:10px;">
+</p>
+
+<p
+id="correoUsuario"
+style="margin-top:5px;color:#8a7461;">
+</p>
+
+
+<button
+onclick="cerrarSesion()"
+style="
+width:100%;
+margin-top:25px;
+padding:13px;
+border:none;
+border-radius:10px;
+background:#d58d86;
+color:white;
+cursor:pointer;
+font-weight:bold;
+">
+
+    Cerrar sesión
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ==================================================
+     CARRITO
+================================================== -->
+
+<div
+class="modal"
+id="modalCarrito">
+
+<div class="modal-contenido">
+
+<button
+class="cerrar"
+onclick="cerrarModal('modalCarrito')">
+
+    ✕
+
+</button>
+
+<h2>
+    🛒 Mi carrito
+</h2>
+
+<div
+id="listaCarrito">
+</div>
+
+
+<div class="total">
+
+    Total:
+    $<span id="total">0</span>
+
+</div>
+
+
+<button
+class="formulario"
+onclick="irAlPago()">
+
+    Continuar con la compra
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- ==================================================
+     CHECKOUT
+================================================== -->
+
+<div
+class="modal"
+id="modalPago">
+
+<div class="modal-contenido">
+
+<button
+class="cerrar"
+onclick="cerrarModal('modalPago')">
+
+    ✕
+
+</button>
+
+
+<h2>
+    📦 Finalizar pedido
+</h2>
+
+
+<form
+class="formulario"
+onsubmit="confirmarPedido(event)">
+
+
+<label>
+    Nombre completo
+</label>
+
+<input
+type="text"
+id="nombreEntrega"
+required>
+
+
+<label>
+    Teléfono
+</label>
+
+<input
+type="tel"
+id="telefonoEntrega"
+required>
+
+
+<label>
+    Ciudad
+</label>
+
+<input
+type="text"
+id="ciudadEntrega"
+required>
+
+
+<label>
+    Dirección de entrega
+</label>
+
+<input
+type="text"
+id="direccionEntrega"
+required>
+
+
+<label>
+    Comentarios
+</label>
+
+<textarea
+id="comentarios"
+rows="3"
+placeholder="Barrio, apartamento, indicaciones...">
+</textarea>
+
+
+<h3 style="margin-top:25px;color:#6a4c36;">
+
+    💳 Selecciona tu medio de pago
+
+</h3>
+
+
+<label class="metodo">
+
+<input
+type="radio"
+name="pago"
+value="Nequi"
+onchange="mostrarPago('nequi')"
+required>
+
+📱 <strong>Nequi</strong>
+
+</label>
+
+
+<label class="metodo">
+
+<input
+type="radio"
+name="pago"
+value="Daviplata"
+onchange="mostrarPago('daviplata')">
+
+📱 <strong>Daviplata</strong>
+
+</label>
+
+
+<label class="metodo">
+
+<input
+type="radio"
+name="pago"
+value="PSE"
+onchange="mostrarPago('pse')">
+
+🏦 <strong>PSE</strong>
+
+</label>
+
+
+<label class="metodo">
+
+<input
+type="radio"
+name="pago"
+value="Tarjeta"
+onchange="mostrarPago('tarjeta')">
+
+💳 <strong>Tarjeta</strong>
+
+</label>
+
+
+<label class="metodo">
+
+<input
+type="radio"
+name="pago"
+value="Contraentrega"
+onchange="mostrarPago('contraentrega')">
+
+💵 <strong>Contraentrega</strong>
+
+</label>
+
+
+<div
+class="info-pago"
+id="nequi">
+
+<strong>
+    📱 Pago por Nequi
+</strong>
+
+<p style="margin-top:8px;">
+
+    Número Nequi:
+    <strong>300 000 0000</strong>
+
+</p>
+
+<p style="margin-top:5px;">
+
+    Después de realizar el pago,
+    envía el comprobante por WhatsApp.
+
+</p>
+
+</div>
+
+
+<div
+class="info-pago"
+id="daviplata">
+
+<strong>
+    📱 Pago por Daviplata
+</strong>
+
+<p style="margin-top:8px;">
+
+    Número:
+    <strong>300 000 0000</strong>
+
+</p>
+
+</div>
+
+
+<div
+class="info-pago"
+id="pse">
+
+<strong>
+    🏦 PSE
+</strong>
+
+<p style="margin-top:8px;">
+
+    El pago se realizaría mediante
+    una plataforma bancaria segura.
+
+</p>
+
+</div>
+
+
+<div
+class="info-pago"
+id="tarjeta">
+
+<strong>
+    💳 Tarjeta
+</strong>
+
+<p style="margin-top:8px;">
+
+    Para cobrar realmente con tarjeta
+    debes conectar una pasarela de pagos.
+
+</p>
+
+</div>
+
+
+<div
+class="info-pago"
+id="contraentrega">
+
+<strong>
+    💵 Contraentrega
+</strong>
+
+<p style="margin-top:8px;">
+
+    Pagas cuando recibas tus bolos.
+
+</p>
+
+</div>
+
+
+<button type="submit">
+
+    ✅ Confirmar pedido
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- ==================================================
+     INFORMACIÓN
+================================================== -->
+
+<section class="info">
+
+<h2>
+    🍧 Bolos Deliciosos
+</h2>
+
+<p>
+    Productos preparados con cariño para ti.
+</p>
+
+<p>
+    📱 WhatsApp: 300 000 0000
+</p>
+
+<p>
+    📍 Colombia
+</p>
+
+</section>
+
+
+<footer>
+
+© 2026 Bolos Deliciosos
+
+</footer>
+
+
+<script>
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+let carrito =
+JSON.parse(
+localStorage.getItem("carritoBolos")
+) || [];
+
+
+let usuarioActual =
+JSON.parse(
+localStorage.getItem("usuarioBolos")
+) || null;
+
+
+/* ==================================================
+   DINERO
+================================================== */
+
+function dinero(numero){
+
+return numero.toLocaleString("es-CO");
+
+}
+
+
+/* ==================================================
+   AGREGAR PRODUCTO
+================================================== */
+
+function agregarProducto(
+nombre,
+precio,
+imagen
+){
+
+let producto =
+carrito.find(
+p => p.nombre === nombre
+);
+
+
+if(producto){
+
+producto.cantidad++;
+
+}else{
+
+carrito.push({
+
+nombre:nombre,
+precio:precio,
+imagen:imagen,
+cantidad:1
+
+});
+
+}
+
+
+guardarCarrito();
+
+actualizarCarrito();
+
+
+alert(
+"🍧 ¡Producto agregado al carrito!"
+);
+
+}
+
+
+/* ==================================================
+   GUARDAR
+================================================== */
+
+function guardarCarrito(){
+
+localStorage.setItem(
+"carritoBolos",
+JSON.stringify(carrito)
+);
+
+}
+
+
+/* ==================================================
+   ACTUALIZAR CARRITO
+================================================== */
+
+function actualizarCarrito(){
+
+let lista =
+document.getElementById(
+"listaCarrito"
+);
+
+
+let cantidad =
+document.getElementById(
+"cantidad"
+);
+
+
+let totalElemento =
+document.getElementById(
+"total"
+);
+
+
+lista.innerHTML="";
+
+
+let total=0;
+
+let cantidadTotal=0;
+
+
+carrito.forEach(
+(producto,index)=>{
+
+
+total +=
+producto.precio *
+producto.cantidad;
+
+
+cantidadTotal +=
+producto.cantidad;
+
+
+lista.innerHTML += `
+
+<div class="item-carrito">
+
+<img
+src="${producto.imagen}"
+alt="${producto.nombre}">
+
+
+<div class="item-info">
+
+<strong>
+${producto.nombre}
+</strong>
+
+<p>
+$${dinero(producto.precio)}
+</p>
+
+
+<div class="controles">
+
+<button
+onclick="cambiarCantidad(
+${index},
+-1
+)">
+
+−
+
+</button>
+
+
+<span>
+${producto.cantidad}
+</span>
+
+
+<button
+onclick="cambiarCantidad(
+${index},
+1
+)">
+
++
+
+</button>
+
+
+<button
+class="eliminar"
+onclick="eliminarProducto(
+${index}
+)">
+
+🗑️
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+
+if(carrito.length===0){
+
+lista.innerHTML=
+"<p style='margin-top:20px;'>Tu carrito está vacío 🍧</p>";
+
+}
+
+
+cantidad.textContent=
+cantidadTotal;
+
+
+totalElemento.textContent=
+dinero(total);
+
+}
+
+
+/* ==================================================
+   CANTIDAD
+================================================== */
+
+function cambiarCantidad(
+indice,
+cambio
+){
+
+carrito[indice].cantidad +=
+cambio;
+
+
+if(
+carrito[indice].cantidad <= 0
+){
+
+carrito.splice(indice,1);
+
+}
+
+
+guardarCarrito();
+
+actualizarCarrito();
+
+}
+
+
+/* ==================================================
+   ELIMINAR
+================================================== */
+
+function eliminarProducto(indice){
+
+carrito.splice(indice,1);
+
+guardarCarrito();
+
+actualizarCarrito();
+
+}
+
+
+/* ==================================================
+   REGISTRO
+================================================== */
+
+function registrar(event){
+
+event.preventDefault();
+
+
+let nombre =
+document.getElementById(
+"registroNombre"
+).value;
+
+
+let correo =
+document.getElementById(
+"registroCorreo"
+).value
+.toLowerCase();
+
+
+let password =
+document.getElementById(
+"registroPassword"
+).value;
+
+
+let usuarios =
+JSON.parse(
+localStorage.getItem(
+"usuariosBolos"
+)
+) || [];
+
+
+if(
+usuarios.some(
+u => u.correo === correo
+)
+){
+
+alert(
+"⚠️ Este correo ya está registrado."
+);
+
+return;
+
+}
+
+
+usuarios.push({
+
+nombre:nombre,
+correo:correo,
+password:password
+
+});
+
+
+localStorage.setItem(
+"usuariosBolos",
+JSON.stringify(usuarios)
+);
+
+
+alert(
+"🎉 ¡Cuenta creada correctamente!"
+);
+
+
+mostrarLogin();
+
+}
+
+
+/* ==================================================
+   LOGIN
+================================================== */
+
+function iniciarSesion(event){
+
+event.preventDefault();
+
+
+let correo =
+document.getElementById(
+"loginCorreo"
+).value
+.toLowerCase();
+
+
+let password =
+document.getElementById(
+"loginPassword"
+).value;
+
+
+let usuarios =
+JSON.parse(
+localStorage.getItem(
+"usuariosBolos"
+)
+) || [];
+
+
+let usuario =
+usuarios.find(
+u =>
+u.correo === correo &&
+u.password === password
+);
+
+
+if(!usuario){
+
+alert(
+"❌ Correo o contraseña incorrectos."
+);
+
+return;
+
+}
+
+
+usuarioActual=usuario;
+
+
+localStorage.setItem(
+"usuarioBolos",
+JSON.stringify(
+usuarioActual
+)
+);
+
+
+actualizarUsuario();
+
+cerrarModal(
+"modalUsuario"
+);
+
+
+alert(
+"👋 ¡Bienvenido " +
+usuario.nombre +
+"!"
+);
+
+}
+
+
+/* ==================================================
+   USUARIO
+================================================== */
+
+function actualizarUsuario(){
+
+let boton =
+document.getElementById(
+"botonUsuario"
+);
+
+
+if(usuarioActual){
+
+boton.textContent=
+"👤 " +
+usuarioActual.nombre;
+
+}else{
+
+boton.textContent=
+"👤 Ingresar";
+
+}
+
+}
+
+
+/* ==================================================
+   ABRIR USUARIO
+================================================== */
+
+function abrirUsuario(){
+
+document.getElementById(
+"modalUsuario"
+)
+.classList.add("activo");
+
+
+if(usuarioActual){
+
+document.getElementById(
+"loginSeccion"
+).style.display="none";
+
+
+document.getElementById(
+"registroSeccion"
+).style.display="none";
+
+
+document.getElementById(
+"usuarioSeccion"
+).style.display="block";
+
+
+document.getElementById(
+"nombreUsuario"
+).textContent=
+usuarioActual.nombre;
+
+
+document.getElementById(
+"correoUsuario"
+).textContent=
+usuarioActual.correo;
+
+}else{
+
+mostrarLogin();
+
+}
+
+}
+
+
+/* ==================================================
+   CERRAR SESIÓN
+================================================== */
+
+function cerrarSesion(){
+
+usuarioActual=null;
+
+
+localStorage.removeItem(
+"usuarioBolos"
+);
+
+
+actualizarUsuario();
+
+mostrarLogin();
+
+}
+
+
+/* ==================================================
+   LOGIN / REGISTRO
+================================================== */
+
+function mostrarRegistro(){
+
+document.getElementById(
+"loginSeccion"
+).style.display="none";
+
+
+document.getElementById(
+"registroSeccion"
+).style.display="block";
+
+}
+
+
+function mostrarLogin(){
+
+document.getElementById(
+"loginSeccion"
+).style.display="block";
+
+
+document.getElementById(
+"registroSeccion"
+).style.display="none";
+
+
+document.getElementById(
+"usuarioSeccion"
+).style.display="none";
+
+}
+
+
+/* ==================================================
+   CARRITO
+================================================== */
+
+function abrirCarrito(){
+
+actualizarCarrito();
+
+
+document.getElementById(
+"modalCarrito"
+)
+.classList.add("activo");
+
+}
+
+
+/* ==================================================
+   CERRAR MODAL
+================================================== */
+
+function cerrarModal(id){
+
+document.getElementById(id)
+.classList.remove("activo");
+
+}
+
+
+/* ==================================================
+   IR AL PAGO
+================================================== */
+
+function irAlPago(){
+
+if(carrito.length===0){
+
+alert(
+"🛒 Primero agrega un bolo al carrito."
+);
+
+return;
+
+}
+
+
+if(!usuarioActual){
+
+alert(
+"👤 Primero debes registrarte o iniciar sesión."
+);
+
+
+cerrarModal(
+"modalCarrito"
+);
+
+
+abrirUsuario();
+
+return;
+
+}
+
+
+cerrarModal(
+"modalCarrito"
+);
+
+
+document.getElementById(
+"modalPago"
+)
+.classList.add("activo");
+
+
+document.getElementById(
+"nombreEntrega"
+).value=
+usuarioActual.nombre;
+
+}
+
+
+/* ==================================================
+   MOSTRAR PAGO
+================================================== */
+
+function mostrarPago(id){
+
+let cajas =
+document.querySelectorAll(
+".info-pago"
+);
+
+
+cajas.forEach(
+caja =>
+caja.classList.remove(
+"activo"
+)
+);
+
+
+document.getElementById(id)
+.classList.add("activo");
+
+}
+
+
+/* ==================================================
+   CONFIRMAR PEDIDO
+================================================== */
+
+function confirmarPedido(event){
+
+event.preventDefault();
+
+
+if(carrito.length===0){
+
+alert(
+"El carrito está vacío."
+);
+
+return;
+
+}
+
+
+let nombre =
+document.getElementById(
+"nombreEntrega"
+).value;
+
+
+let telefono =
+document.getElementById(
+"telefonoEntrega"
+).value;
+
+
+let ciudad =
+document.getElementById(
+"ciudadEntrega"
+).value;
+
+
+let direccion =
+document.getElementById(
+"direccionEntrega"
+).value;
+
+
+let comentarios =
+document.getElementById(
+"comentarios"
+).value;
+
+
+let pago =
+document.querySelector(
+'input[name="pago"]:checked'
+);
+
+
+if(!pago){
+
+alert(
+"Selecciona un medio de pago."
+);
+
+return;
+
+}
+
+
+let total =
+carrito.reduce(
+(suma,producto)=>
+suma +
+producto.precio *
+producto.cantidad,
+0
+);
+
+
+let numeroPedido =
+"BOL-" +
+Date.now();
+
+
+let mensaje =
+"Hola 👋 quiero realizar un pedido en Bolos Deliciosos.%0A%0A";
+
+
+mensaje +=
+"*Pedido:* " +
+numeroPedido +
+"%0A";
+
+
+mensaje +=
+"*Cliente:* " +
+nombre +
+"%0A";
+
+
+mensaje +=
+"*Teléfono:* " +
+telefono +
+"%0A";
+
+
+mensaje +=
+"*Ciudad:* " +
+ciudad +
+"%0A";
+
+
+mensaje +=
+"*Dirección:* " +
+direccion +
+"%0A";
+
+
+mensaje +=
+"*Medio de pago:* " +
+pago.value +
+"%0A%0A";
+
+
+mensaje +=
+"*Productos:*%0A";
+
+
+carrito.forEach(
+producto=>{
+
+mensaje +=
+"🍧 " +
+producto.nombre +
+" x" +
+producto.cantidad +
+" - $" +
+dinero(
+producto.precio *
+producto.cantidad
+) +
+"%0A";
+
+});
+
+
+mensaje +=
+"%0A*TOTAL:* $" +
+dinero(total);
+
+
+if(comentarios){
+
+mensaje +=
+"%0A%0A*Comentarios:* " +
+comentarios;
+
+}
+
+
+/*
+====================================================
+CAMBIA ESTE NÚMERO POR EL WHATSAPP DE TU NEGOCIO
+
+COLOMBIA = 57
+
+Ejemplo:
+573001234567
+====================================================
+*/
+
+let numeroWhatsApp=
+"573000000000";
+
+
+let url=
+"https://wa.me/" +
+numeroWhatsApp +
+"?text=" +
+mensaje;
+
+
+alert(
+"🎉 ¡Pedido creado correctamente!\n\n" +
+"Tu número de pedido es:\n" +
+numeroPedido
+);
+
+
+carrito=[];
+
+
+guardarCarrito();
+
+actualizarCarrito();
+
+
+cerrarModal(
+"modalPago"
+);
+
+
+window.open(
+url,
+"_blank"
+);
+
+}
+
+
+/* ==================================================
+   INICIAR
+================================================== */
+
+actualizarCarrito();
+
+actualizarUsuario();
+
+</script>
+
+</body>
+
+</html>
+```
